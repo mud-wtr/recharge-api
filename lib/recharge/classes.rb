@@ -108,7 +108,8 @@ class2 "Recharge", JSON.parse(<<-END) do
         "billing_country": "United States",
         "billing_phone": "3103843698",
         "processor_type": null,
-        "status": "FOO"
+        "status": "FOO",
+        "stripe_customer_token": "cus_123xyz"
     },
   "order": {
      "id":7271806,

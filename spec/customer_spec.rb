@@ -35,7 +35,37 @@ RSpec.describe Recharge::Customer do
         "billing_country" => "USA",
         "billing_phone" => "5555551213",
         "processor_type" => "stripe",
-        "status" => "X"
+        "status" => "X",
+        "stripe_customer_token" => nil
+      }
+
+      sub = described_class.new(data)
+      expect(sub.to_h).to eq data
+    end
+
+    it "handles data with stripe_customer_token" do
+      data = {
+        "id" => 1,
+        "hash" => "X123",
+        "shopify_customer_id" => "Y999",
+        "email" => "sshaw@screenstaring.com",
+        "created_at" => "2018-01-10T11:00:00",
+        "updated_at" => "2017-01-11T13:16:19",
+        "first_name" => "Mike",
+        "last_name" => "Flynn",
+        "billing_first_name" => "S",
+        "billing_last_name" => "SS",
+        "billing_company" => "Company",
+        "billing_address1" => "Address",
+        "billing_address2" => "Address2",
+        "billing_zip" => "90210",
+        "billing_city" => "LA",
+        "billing_province" => "CA",
+        "billing_country" => "USA",
+        "billing_phone" => "5555551213",
+        "processor_type" => "stripe",
+        "status" => "X",
+        "stripe_customer_token" => "cus_123xyz"
       }
 
       sub = described_class.new(data)
