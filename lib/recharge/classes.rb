@@ -109,7 +109,9 @@ class2 "Recharge", JSON.parse(<<-END) do
         "billing_phone": "3103843698",
         "processor_type": null,
         "status": "FOO",
-        "stripe_customer_token": "cus_123xyz"
+        "stripe_customer_token": "cus_123xyz",
+        "paypal_customer_token": "1212121212",
+        "braintree_customer_token": "1212121212",
     },
   "order": {
      "id":7271806,
