@@ -209,6 +209,23 @@ module Recharge
         data = GET(self::PATH, options)
         (data[self::COLLECTION] || []).map { |d| new(d.merge("meta" => data["meta"])) }
       end
+
+      def auto_paging_each(options = {})
+        options[:limit] ||= 50
+        current_page = options[:page] || 1
+        records = []
+        record_found = true
+        while record_found
+          record_found = false
+          list(options.merge(page: current_page)).each do |record|
+            record_found = true
+            records << record
+            yield(record) if block_given?
+          end
+          current_page += 1
+        end
+        records
+      end
     end
 
     module Update
