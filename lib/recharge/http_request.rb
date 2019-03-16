@@ -217,10 +217,14 @@ module Recharge
         record_found = true
         while record_found
           record_found = false
-          list(options.merge(page: current_page)).each do |record|
-            record_found = true
-            records << record
-            yield(record) if block_given?
+          begin
+            list(options.merge(page: current_page)).each do |record|
+              record_found = true
+              records << record
+              yield(record) if block_given?
+            end
+          rescue Recharge::RequestError
+            return records
           end
           current_page += 1
         end
