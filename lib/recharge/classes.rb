@@ -3,44 +3,51 @@ require "class2"
 require "recharge/http_request"
 
 class2 "Recharge", JSON.parse(<<-END) do
-{
-  "subscription":
-     {
-        "id":10101,
-        "address_id":178918,
-        "customer_id":1438,
-        "created_at":"2017-02-28T20:31:29",
-        "updated_at":"2017-02-28 20:31:29",
-        "next_charge_scheduled_at":"2017-04-01T00:00:00",
-        "cancelled_at":null,
-        "product_title":"Sumatra Coffee",
-        "price":12,
-        "quantity":1,
-        "status":"ACTIVE",
-        "shopify_product_id":1255183683,
-        "shopify_variant_id":3844924611,
-        "sku":null,
-        "order_interval_unit":"day",
-        "order_interval_frequency":"30",
-        "charge_interval_frequency":"30",
-        "order_day_of_month":null,
-        "order_day_of_week":null,
-        "properties": []
-     },
-  "charge":
-    {
+  {
+    "subscription": {
+      "address_id":178918,
+      "cancellation_reason": "I didn't like the selections in my last box",
+      "cancellation_reason_comments": "",
+      "cancelled_at":null,
+      "charge_interval_frequency": "3",
+      "charge_interval_frequency":"30",
+      "created_at":"2017-02-28T20:31:29",
+      "customer_id":1438,
+      "expire_after_specific_number_of_charges": null,
+      "max_retries_reached": 0,
+      "has_queued_charges": 0,
+      "id":10101,
+      "next_charge_scheduled_at":"2017-04-01T00:00:00",
+      "order_day_of_month":null,
+      "order_day_of_week":null,
+      "order_interval_frequency":"30",
+      "order_interval_unit":"day",
+      "price":12,
+      "product_title":"Sumatra Coffee",
+      "properties": [],
+      "quantity":1,
+      "recharge_product_id": 27606,
+      "shopify_product_id":1255183683,
+      "shopify_variant_id":3844924611,
+      "sku": null,
+      "sku_override": false,
+      "status":"ACTIVE",
+      "updated_at":"2017-02-28 20:31:29",
+      "variant_title": "6X"
+    },
+    "charge": {
       "address_id":178918,
       "billing_address":{
-         "address1":"3030 Nebraska Avenue",
-         "address2":"",
-         "city":"Los Angeles",
-         "company":"",
-         "country":"United States",
-         "first_name":"Mike",
-         "last_name":"Flynn",
-         "phone":"",
-         "province":"California",
-         "zip":"90404"
+        "address1":"3030 Nebraska Avenue",
+        "address2":"",
+        "city":"Los Angeles",
+        "company":"",
+        "country":"United States",
+        "first_name":"Mike",
+        "last_name":"Flynn",
+        "phone":"",
+        "province":"California",
+        "zip":"90404"
       },
       "client_details": {
         "browser_ip": null,
@@ -53,100 +60,99 @@ class2 "Recharge", JSON.parse(<<-END) do
       "id":1843,
       "last_name":"Flynn",
       "line_items":[
-         {
-            "grams":0,
-            "price":100.0,
-            "properties":[],
-            "quantity":1,
-            "shopify_product_id": "1255183683",
-            "shopify_variant_id":"3844924611",
-            "sku":"",
-            "title": "Milk  10% Off Auto renew",
-            "variant_title": "a / b",
-            "vendor": "Example Storeeeeeee",
-            "subscription_id":14562
-         }
+        {
+          "grams":0,
+          "price":100.0,
+          "properties":[],
+          "quantity":1,
+          "shopify_product_id": "1255183683",
+          "shopify_variant_id":"3844924611",
+          "sku":"",
+          "title": "Milk  10% Off Auto renew",
+          "variant_title": "a / b",
+          "vendor": "Example Storeeeeeee",
+          "subscription_id":14562
+        }
       ],
       "processed_at":"2014-11-20T00:00:00",
       "scheduled_at":"2014-11-20T00:00:01",
       "shipments_count":null,
       "shipping_address":{
-         "address1":"3030 Nebraska Avenue",
-         "address2":"",
-         "city":"Los Angeles",
-         "company":"",
-         "country":"United States",
-         "first_name":"Mike",
-         "last_name":"Flynn",
-         "phone":"3103843698",
-         "province":"California",
-         "zip":"90404"
+        "address1":"3030 Nebraska Avenue",
+        "address2":"",
+        "city":"Los Angeles",
+        "company":"",
+        "country":"United States",
+        "first_name":"Mike",
+        "last_name":"Flynn",
+        "phone":"3103843698",
+        "province":"California",
+        "zip":"90404"
       },
       "shopify_order_id":"281223307",
       "status":"SUCCESS",
       "total_price":446.00,
       "updated_at":"2016-09-05T09:19:29"
     },
-  "customer":
-     {
-        "id": 1438,
-        "hash": "143806234a9ff87a8d9e",
-        "shopify_customer_id": null,
-        "email": "mike@gmail.com",
-        "created_at": "2018-01-10T11:00:00",
-        "updated_at": "2017-01-11T13:16:19",
-        "first_name": "Mike",
-        "last_name": "Flynn",
-        "billing_first_name": "Mike",
-        "billing_last_name": "Flynn",
-        "billing_company": null,
-        "billing_address1": "3030 Nebraska Avenue",
-        "billing_address2": null,
-        "billing_zip": "90404",
-        "billing_city": "Los Angeles",
-        "billing_province": "California",
-        "billing_country": "United States",
-        "billing_phone": "3103843698",
-        "processor_type": null,
-        "status": "FOO",
-        "stripe_customer_token": "cus_123xyz",
-        "paypal_customer_token": "1212121212",
-        "braintree_customer_token": "1212121212"
+    "customer": {
+      "id": 1438,
+      "hash": "143806234a9ff87a8d9e",
+      "shopify_customer_id": null,
+      "email": "mike@gmail.com",
+      "created_at": "2018-01-10T11:00:00",
+      "updated_at": "2017-01-11T13:16:19",
+      "first_name": "Mike",
+      "last_name": "Flynn",
+      "billing_first_name": "Mike",
+      "billing_last_name": "Flynn",
+      "billing_company": null,
+      "billing_address1": "3030 Nebraska Avenue",
+      "billing_address2": null,
+      "billing_zip": "90404",
+      "billing_city": "Los Angeles",
+      "billing_province": "California",
+      "billing_country": "United States",
+      "billing_phone": "3103843698",
+      "processor_type": null,
+      "status": "FOO",
+      "stripe_customer_token": "cus_123xyz",
+      "paypal_customer_token": "1212121212",
+      "braintree_customer_token": "1212121212"
     },
-  "order": {
-     "id":7271806,
-     "customer_id":10101,
-     "address_id":178918,
-     "charge_id":9519316,
-     "transaction_id":"ch_19sdP2J2zqHvZRd1hqkeGANO",
-     "shopify_order_id":"5180645510",
-     "shopify_order_number":5913,
-     "created_at":"2017-03-01T14:46:26",
-     "updated_at":"2017-03-01T14:46:26",
-     "scheduled_at":"2017-03-01T00:00:00",
-     "processed_at":"2017-03-01T14:46:26",
-     "status":"SUCCESS",
-     "charge_status":"SUCCESS",
-     "type":"CHECKOUT",
-     "first_name":"Mike",
-     "last_name":"Flynn",
-     "email":"mike@gmail.com",
-     "payment_processor":"stripe",
-     "address_is_active":1,
-     "is_prepaid":0,
-     "line_items":[
+    "order": {
+      "id":7271806,
+      "customer_id":10101,
+      "address_id":178918,
+      "charge_id":9519316,
+      "transaction_id":"ch_19sdP2J2zqHvZRd1hqkeGANO",
+      "shopify_order_id":"5180645510",
+      "shopify_order_number":5913,
+      "created_at":"2017-03-01T14:46:26",
+      "updated_at":"2017-03-01T14:46:26",
+      "scheduled_at":"2017-03-01T00:00:00",
+      "processed_at":"2017-03-01T14:46:26",
+      "status":"SUCCESS",
+      "charge_status":"SUCCESS",
+      "type":"CHECKOUT",
+      "first_name":"Mike",
+      "last_name":"Flynn",
+      "email":"mike@gmail.com",
+      "payment_processor":"stripe",
+      "address_is_active":1,
+      "is_prepaid":0,
+      "line_items":[
         {
-           "subscription_id":10101,
-           "shopify_product_id":"1255183683",
-           "shopify_variant_id":"3844924611",
-           "variant_title":"Sumatra",
-           "title":"Sumatra Latte",
-           "quantity":1,
-           "properties":[]
+          "subscription_id":10101,
+          "shopify_product_id":"1255183683",
+          "shopify_variant_id":"3844924611",
+          "variant_title":"Sumatra",
+          "title":"Sumatra Latte",
+          "quantity":1,
+          "properties":[]
         }
-     ],
-     "total_price":18.00,
-     "shipping_address":{
+      ],
+      "total_price":18.00,
+      "shipping_address":{
         "address1":"1933 Manning",
         "address2":"204",
         "city":"los angeles",
@@ -157,8 +163,8 @@ class2 "Recharge", JSON.parse(<<-END) do
         "company":"bootstrap",
         "phone":"3103103101",
         "country":"United States"
-     },
-     "billing_address":{
+      },
+      "billing_address":{
         "address1":"1933 Manning",
         "address2":"204",
         "city":"los angeles",
@@ -169,29 +175,28 @@ class2 "Recharge", JSON.parse(<<-END) do
         "company":"bootstrap",
         "phone":"3103103101",
         "country":"United States"
-     }
-  },
-  "webhook":
-    {
-        "id":6,
-        "address":"https://request.in/foo",
-        "topic":"order/create"
-  },
-  "address":{
-    "id":3411137,
-    "address1":"1933 Manning",
-    "address2":"204",
-    "city":"los angeles",
-    "province":"California",
-    "first_name":"mike",
-    "last_name":"flynn",
-    "zip":"90025",
-    "company":"bootstrap",
-    "phone":"3103103101",
-    "country":"United States"
+      }
+    },
+    "webhook": {
+      "id":6,
+      "address":"https://request.in/foo",
+      "topic":"order/create"
+    },
+    "address": {
+      "id":3411137,
+      "address1":"1933 Manning",
+      "address2":"204",
+      "city":"los angeles",
+      "province":"California",
+      "first_name":"mike",
+      "last_name":"flynn",
+      "zip":"90025",
+      "company":"bootstrap",
+      "phone":"3103103101",
+      "country":"United States"
+    }
   }
-}
-END
+  END
   def meta=(meta)
     @meta = meta
   end
