@@ -11,7 +11,7 @@ describe Recharge::Persistable do
       it "creates the record" do
         foo = Foo.new(:bar => "blah")
 
-        expect(Foo).to receive(:create).with("bar" => "blah").and_return(instance_double("Foo", :id => 1))
+        expect(Foo).to receive(:create).with(bar: "blah", id: nil).and_return(instance_double("Foo", :id => 1))
         foo.save
 
         expect(foo.id).to eq 1
@@ -22,7 +22,7 @@ describe Recharge::Persistable do
       it "updates the record" do
         foo = Foo.new(:id => 2, :bar => "blah")
 
-        expect(Foo).to receive(:update).with(2, "bar" => "blah")
+        expect(Foo).to receive(:update).with(2, bar: "blah", id: 2)
         foo.save
 
         expect(foo.id).to eq 2

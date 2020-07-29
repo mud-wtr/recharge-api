@@ -73,66 +73,66 @@ RSpec.describe Recharge::Charge do
   describe ".new" do
     it "instantiates a charge object with the given attributes" do
       data = {
-        "id" => 1,
-        "address_id" => 2,
-        "billing_address" => {
-          "city" => "NYC",
-          "address1" => "555 5th ave",
-          "address2" => "10th floor",
-          "company"  => "foo",
-          "country"  => "USA",
-          "first_name" => "s",
-          "last_name" => "shaw",
-          "phone" => "555-555-1212",
-          "province" => "BC",
-          "zip" => "10000"
+        :id => 1,
+        :address_id => 2,
+        :billing_address => {
+          :city => "NYC",
+          :address1 => "555 5th ave",
+          :address2 => "10th floor",
+          :company  => "foo",
+          :country  => "USA",
+          :first_name => "s",
+          :last_name => "shaw",
+          :phone => "555-555-1212",
+          :province => "BC",
+          :zip => "10000"
         },
-        "shipping_address" => {
-          "city" => "LA",
-          "address1" => "123 Sepulveda Blvd.",
-          "address2" => "10th floor",
-          "company"  => "bar",
-          "country"  => "USA",
-          "first_name" => "s",
-          "last_name" => "shaw",
-          "phone" => "555-555-9999",
-          "province" => "BC",
-          "zip" => "90210"
+        :shipping_address => {
+          :city => "LA",
+          :address1 => "123 Sepulveda Blvd.",
+          :address2 => "10th floor",
+          :company  => "bar",
+          :country  => "USA",
+          :first_name => "s",
+          :last_name => "shaw",
+          :phone => "555-555-9999",
+          :province => "BC",
+          :zip => "90210"
         },
-        "client_details" => {
-          "browser_ip" => "127.0.0.1",
-          "user_agent" => "Konquer"
+        :client_details => {
+          :browser_ip => "127.0.0.1",
+          :user_agent => "Konquer"
         },
-        "created_at" => "2017-01-01T00:00:00",
-        "customer_hash" => "X123",
-        "customer_id" => 3,
-        "first_name" => "sshaw",
-        "last_name" => "xxx",
-        "line_items" => [
-          "subscription_id" => 9999,
-          "quantity" => 10,
-          "shopify_product_id" => "90",
-          "shopify_variant_id" => "91",
-          "sku" => "SKU111",
-          "title" => "Foo Product",
-          "variant_title" => "Foo Variant",
-          "vendor" => "Plug Depot",
-           "grams" => 453,
-           "price" => 100.0,
-           "properties" => [
+        :created_at => "2017-01-01T00:00:00",
+        :customer_hash => "X123",
+        :customer_id => 3,
+        :first_name => "sshaw",
+        :last_name => "xxx",
+        :line_items => [
+          :subscription_id => 9999,
+          :quantity => 10,
+          :shopify_product_id => "90",
+          :shopify_variant_id => "91",
+          :sku => "SKU111",
+          :title => "Foo Product",
+          :variant_title => "Foo Variant",
+          :vendor => "Plug Depot",
+           :grams => 453,
+           :price => 100.0,
+           :properties => [
              {
-               "name" => "x",
-               "value" => "y"
+               :name => "x",
+               :value => "y"
              }
            ]
         ],
-        "processed_at" => "2017-01-01T00:00:00",
-        "scheduled_at" => "2014-01-05T00:00:00",
-        "shipments_count" => 4,
-        "shopify_order_id" => "5",
-        "status" => "SUCCESS",
-        "total_price" => 1.0,
-        "updated_at" => "2017-01-03T00:00:00"
+        :processed_at => "2017-01-01T00:00:00",
+        :scheduled_at => "2014-01-05T00:00:00",
+        :shipments_count => 4,
+        :shopify_order_id => "5",
+        :status => "SUCCESS",
+        :total_price => 1.0,
+        :updated_at => "2017-01-03T00:00:00"
       }
 
       charge = described_class.new(data)
