@@ -34,7 +34,7 @@ class2 "Recharge", JSON.parse(<<-END) do
       "status":"ACTIVE",
       "updated_at":"2017-02-28 20:31:29",
       "variant_title": "6X",
-      "is_prepaid": 0
+      "is_prepaid": true
     },
     "charge": {
       "address_id":178918,
