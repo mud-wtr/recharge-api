@@ -33,7 +33,8 @@ class2 "Recharge", JSON.parse(<<-END) do
       "sku_override": false,
       "status":"ACTIVE",
       "updated_at":"2017-02-28 20:31:29",
-      "variant_title": "6X"
+      "variant_title": "6X",
+      "is_prepaid": 0
     },
     "charge": {
       "address_id":178918,
