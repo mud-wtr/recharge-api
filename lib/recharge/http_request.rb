@@ -64,7 +64,24 @@ module Recharge
         req["Content-Type"] = "application/json"
       end
 
-      connection.start do |http|
+      # Create a local HTTP instance for this call, rather than rely
+      # on the connection method which would return a HTTP instance for the
+      # class instance.
+      # If this is not enough to thwart the bug, then the code should be updated
+      # to make one-off requests rather than the HTTP.start method, which
+      # creates a persistent connection.
+      # @see: https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html#class-Net::HTTP-label-How+to+use+Net-3A-3AHTTP
+      request = Net::HTTP.new(ENDPOINT, PORT)
+      request.use_ssl = true
+
+      if !Recharge.debug
+        request.set_debug_output(nil)
+      else
+        request.set_debug_output(
+          Recharge.debug.is_a?(IO) ? Recharge.debug : $stderr
+        )
+
+      request.start do |http|
         res = http.request(req)
         data = res["Content-Type"] == "application/json" ? parse_json(res.body) : {}
         data["meta"] = { "id" => res["X-Request-Id"], "limit" => res["X-Recharge-Limit"] }
