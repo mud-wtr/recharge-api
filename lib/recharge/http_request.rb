@@ -80,6 +80,7 @@ module Recharge
         request.set_debug_output(
           Recharge.debug.is_a?(IO) ? Recharge.debug : $stderr
         )
+      end
 
       request.start do |http|
         res = http.request(req)
